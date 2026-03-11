@@ -5,13 +5,14 @@ const inputItem = document.querySelector("#city__input");
 const date = document.querySelector(".date");
 const time = document.querySelector(".time");
 const cardTitle = document.querySelector(".card__title");
+const city = document.querySelector("city");
 const cardWeather = document.querySelector(".card__weather");
-const humidityItem = document.querySelector(".card__humidity");
-const windItem = document.querySelector(".card__wind");
+const humidityItem = document.querySelector(".humidity");
+const windItem = document.querySelector(".wind");
 const footerYear = document.querySelector(".footer__text__year");
 
-// fonction affichage du jour et l'heure
-const displayDateTime = () => {
+// Déclaration de la fonction displayDateAndTime() qui va permettre l'affichage de la date et de l'heure
+const displayDateAndTime = () => {
   // Déclaration des différentes variables utilisées pour l'affichage de l'heure
   let today = "";
   let year = "";
@@ -81,11 +82,11 @@ const displayDateTime = () => {
   date.textContent = dayName + " " + dayNumber + " " + month + " " + year;
   time.textContent = hours + ":" + minutes;
 
-  // Lancer la fonction displayDateTime toutes les 1000 ms, soit toute les secondes pour afficher l'heure en temps réel:
-  setTimeout(displayDateTime, 1000);
+  // Lancer la fonction displayDateAndTime toutes les 1000 ms, soit toute les secondes pour afficher l'heure en temps réel:
+  setTimeout(displayDateAndTime, 1000);
 
   footerYear.textContent = `${year}`;
 };
 
-// Appel de la fonction displayDateTime
-displayDateTime();
+// Appel de la fonction displayDateAndTime
+displayDateAndTime();
