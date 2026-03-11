@@ -1,0 +1,301 @@
+/**** Importation des polices ****/
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Pacifico&display=swap');
+
+/**** Reset ****/
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+/**** Variables css ****/
+
+:root {
+    /* var colors */
+    --color-dark: #094067;
+    --color-white: #fffffe;
+    --color-blue: #3da9fc;
+
+    /* var font Family */
+    --font-family-title: "Pacifico", sans-serif;
+    --font-family: "Figtree", sans-serif;
+
+    /* var font Size */
+    --font-size-display1: 3rem;
+    --font-size-p: 1rem;
+    --font-size-h1: 3rem;
+    --font-size-h2: 1.5rem;
+
+    /* var font Weight */
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+}
+
+/**** Font Style ****/
+
+.display1 {
+    font-size: var(--font-size-display1);
+    font-weight: var(--font-weight-bold);
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+    color: #0f0e17;
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+}
+
+h1,
+h2 {
+    font-family: var(--font-family-title);
+}
+
+p {
+    font-size: var(--font-size-p);
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family);
+}
+
+/**** html ****/
+
+html {
+    scroll-behavior: smooth;
+}
+
+/**** body ****/
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(img/background-meteo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-size: var(--font-size-p);
+    font-weight: var(--font-weight-regular);
+    transition: all 0.3s ease-in-out;
+}
+
+/**** header, footer ****/
+
+header,
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 20px;
+}
+
+/**** main ****/
+
+.main__content {
+    width: 100%;
+    max-width: 500px;
+    flex: 1;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    background-color: var(--color-white);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/**** section container ****/
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/**** formulaire ****/
+
+form {
+    display: flex;
+    gap: 20px;
+}
+
+input,
+button {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-bold);
+    border-radius: 4px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    color: var(--color-blue);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-blue);
+}
+
+input::placeholder {
+    color: var(--color-blue);
+    opacity: 1;
+}
+
+button {
+    padding: 12px;
+    color: var(--color-white);
+    background: var(--color-blue);
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/**** card ****/
+
+.card {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    color: var(--color-white);
+    background-color: var(--color-dark);
+    border-radius: 4px;
+}
+
+/**** card__title ****/
+
+.card__title {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card__title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.card__title h2,
+.card__title p {
+    position: relative;
+    z-index: 2;
+    margin-top: 8px;
+}
+
+/**** card__weather ****/
+
+.card__weather {
+    padding: 20px;
+    gap: 100px;
+}
+
+.card__weather__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card__weather__content h2 {
+    margin-bottom: 8px;
+}
+
+.card__weather__content p {
+    color: #d8eefe;
+}
+
+.card__weather__img {
+    overflow: hidden;
+    width: 80%;
+    /*width: 100px;
+    height: 100px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__weather__img img {
+    height: 100%;
+    max-height: 100px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/**** card__grid ****/
+
+.card__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+/**** Mini Card ****/
+
+.card__humidity,
+.card__wind {
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.card__mini__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card__mini__content h2 {
+    margin-bottom: 8px;
+}
+
+.card__mini__content p {
+    color: #d8eefe;
+}
+
+.icon {
+    height: 55px;
+}
+
+/**** footer ****/
+
+footer p {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    color: #0f0e17;
+}
