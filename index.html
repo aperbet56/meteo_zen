@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Météo Zen</title>
+    <!-- Importation de la favicon -->
+    <link
+      rel="shortcut icon"
+      href="img/weather-icon.webp"
+      type="image/x-icon"
+    />
+    <!-- Importation des styles -->
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Début du header -->
+    <header>
+      <h1>Météo zen</h1>
+    </header>
+    <!-- Fin du header -->
+
+    <!-- Début du main -->
+    <main class="main__content">
+      <!-- Début de la section container -->
+      <section class="container">
+        <form>
+          <input
+            type="text"
+            id="city__input"
+            placeholder="Entrez le nom d'une ville"
+          />
+          <button id="search__btn">Rechercher</button>
+        </form>
+
+        <!-- Début de l'article card __title -->
+        <article class="card card__title">
+          <h2 class="city">Ville</h2>
+          <p class="country">Région, Pays</p>
+          <p class="date">Date</p>
+          <p class="time">
+            <span class="hours"></span>:<span class="minutes"></span>
+          </p>
+        </article>
+        <!-- Fin de l'article card__title -->
+
+        <!-- Début de l'article card__weather -->
+        <article class="card card__weather">
+          <div class="card__weather__content">
+            <h2 class="display1">22.04°C</h2>
+            <p>Nuageux</p>
+          </div>
+          <div class="card__weather__img">
+            <img
+              class="logo"
+              src="img/weather-icon.webp"
+              alt="Logo du site Météo Zen"
+            />
+          </div>
+        </article>
+        <!-- Fin de l'article card__weather -->
+
+        <!-- Début de la div card__grid -->
+        <div class="card__grid">
+          <!-- Début de la carte humidité -->
+          <div class="card card__humidity">
+            <img
+              class="icon"
+              src="img/icon-humidity.svg"
+              alt="Icone représentant l'humidité"
+            />
+
+            <div class="card__mini__content">
+              <h2 class="display1">34%</h2>
+              <p>Humidité</p>
+            </div>
+          </div>
+          <!-- Fin de la carte humidité-->
+
+          <!-- Début de la carte vent -->
+          <div class="card card__wind">
+            <img
+              class="icon"
+              src="img/icon-wind.svg"
+              alt="Icone représentant le vent"
+            />
+
+            <div class="card__mini__content">
+              <h2 class="display1">3.09</h2>
+              <p>Vent m/s</p>
+            </div>
+          </div>
+          <!-- Fin de la carte vent -->
+        </div>
+      </section>
+      <!-- Fin de la section container -->
+    </main>
+    <!-- Fin du main -->
+
+    <!-- Début du footer -->
+    <footer>
+      <p class="footer__text">
+        &copy; <span class="footer__text__year"></span> - Météo Zen. Tous droits
+        réservés.
+      </p>
+    </footer>
+    <!-- Fin du footer -->
+
+    <!-- Importation du fichier JavaScript-->
+    <script src="script.js"></script>
+  </body>
+</html>
