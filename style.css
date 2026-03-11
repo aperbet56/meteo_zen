@@ -26,9 +26,10 @@ button {
 
 :root {
     /* var colors */
-    --color-dark: #094067;
+    --color-dark: #1b2d45;
     --color-white: #fffffe;
-    --color-blue: #3da9fc;
+    --color-yellow: #fde24f;
+    --color-blue: #b7c9e4;
 
     /* var font Family */
     --font-family-title: "Pacifico", sans-serif;
@@ -38,7 +39,7 @@ button {
     --font-size-display1: 3rem;
     --font-size-p: 1rem;
     --font-size-h1: 3rem;
-    --font-size-h2: 1.5rem;
+    --font-size-h2: 1.4rem;
 
     /* var font Weight */
     --font-weight-regular: 400;
@@ -58,7 +59,7 @@ h1 {
     text-align: center;
     font-weight: var(--font-weight-bold);
     margin: 0;
-    color: #0f0e17;
+    color: var(--color-white);
 }
 
 h2 {
@@ -123,7 +124,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 100px;
-    background-color: var(--color-white);
+    background-color: var(--color-dark);
     padding: 20px;
     border-radius: 8px;
 }
@@ -149,30 +150,29 @@ button {
     font-family: var(--font-family);
     font-weight: var(--font-weight-bold);
     border-radius: 4px;
+    padding: 12px;
 }
 
 input {
     width: 100%;
-    padding: 12px;
-    color: var(--color-blue);
+    color: var(--color-dark);
     background-color: var(--color-white);
-    border: 1px solid var(--color-blue);
+    border: 3px solid var(--color-yellow);
 }
 
 input::placeholder {
-    color: var(--color-blue);
+    color: var(--color-yellow);
     opacity: 1;
 }
 
 button {
-    padding: 12px;
-    color: var(--color-white);
-    background: var(--color-blue);
+    color: var(--color-dark);
+    background: var(--color-yellow);
     cursor: pointer;
 }
 
 button:hover {
-    opacity: 0.8;
+    background-color: var(--color-white);
 }
 
 /**** card ****/
@@ -181,8 +181,8 @@ button:hover {
     overflow: hidden;
     width: 100%;
     display: flex;
-    color: var(--color-white);
-    background-color: var(--color-dark);
+    color: var(--color-dark);
+    background-color: var(--color-white);
     border-radius: 4px;
 }
 
@@ -193,19 +193,7 @@ button:hover {
     flex-direction: column;
     align-items: center;
     padding: 40px 20px;
-    background-size: cover;
-    background-position: center;
-}
-
-.card__title::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 1;
+    text-align: center;
 }
 
 .card__title h2,
@@ -213,13 +201,15 @@ button:hover {
     position: relative;
     z-index: 2;
     margin-top: 8px;
+    font-weight: var(--font-weight-bold);
 }
 
 /**** card__weather ****/
 
 .card__weather {
     padding: 20px;
-    gap: 100px;
+    gap: 20px;
+    background-color: var(--color-white);
 }
 
 .card__weather__content {
@@ -232,15 +222,9 @@ button:hover {
     margin-bottom: 8px;
 }
 
-.card__weather__content p {
-    color: #d8eefe;
-}
-
 .card__weather__img {
     overflow: hidden;
-    width: 80%;
-    /*width: 100px;
-    height: 100px;*/
+    width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -249,8 +233,6 @@ button:hover {
 .card__weather__img img {
     height: 100%;
     max-height: 100px;
-    width: 100%;
-    object-fit: cover;
 }
 
 /**** card__grid ****/
@@ -271,6 +253,16 @@ button:hover {
     align-items: center;
     padding: 20px;
     gap: 20px;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+.card__wind {
+    padding-inline-end: 0;
+}
+
+.card__humidity {
+    padding-inline-start: 0;
 }
 
 .card__mini__content {
@@ -284,7 +276,7 @@ button:hover {
 }
 
 .card__mini__content p {
-    color: #d8eefe;
+    color: var(--color-blue);
 }
 
 .icon {
@@ -297,7 +289,7 @@ footer p {
     font-size: var(--font-size-h2);
     font-weight: var(--font-weight-bold);
     text-align: center;
-    color: #0f0e17;
+    color: var(--color-white);
 }
 
 /**** Responsive design version mobile ****/
@@ -317,5 +309,13 @@ footer p {
 
     .card__grid {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card__humidity {
+        padding-inline-end: 0;
+    }
+
+    .card__wind {
+        padding-inline-start: 0;
     }
 }
