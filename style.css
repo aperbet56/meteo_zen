@@ -299,3 +299,23 @@ footer p {
     text-align: center;
     color: #0f0e17;
 }
+
+/**** Responsive design version mobile ****/
+
+@media screen and (max-width: 576px) {
+    body {
+        padding-inline: 20px;
+    }
+
+    .main__content {
+        gap: 50px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    .card__grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
