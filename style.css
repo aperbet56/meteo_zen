@@ -235,8 +235,12 @@ input {
 }
 
 input::placeholder {
-    color: var(--color-yellow);
+    color: var(--color-dark);
     opacity: 1;
+}
+
+input:focus {
+    background-color: var(--color-yellow);
 }
 
 button {
@@ -245,7 +249,8 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button:hover,
+button:focus {
     background-color: var(--color-white);
 }
 
@@ -288,7 +293,7 @@ button:hover {
 .card__title p {
     position: relative;
     z-index: 2;
-    margin-top: 8px;
+    margin-top: 10px;
     color: var(--color-white);
     font-weight: var(--font-weight-bold);
 }
