@@ -1,5 +1,4 @@
 // Récupération des éléments HTML5
-const bodyItem = document.querySelector("body");
 const buttonItem = document.querySelector("#search__btn");
 const inputItem = document.querySelector("#city__input");
 const date = document.querySelector(".date");
@@ -26,6 +25,12 @@ const displayWeather = async (city) => {
       if (res.ok) {
         return res.json();
       }
+
+      /* if (!res.ok) {
+        alert(
+          "Ville non trouvée ! Assurez-vous que l'orthographe de la ville soit correct !"
+        );
+      }*/
     })
     .then(function (value) {
       // Affichage d'un message de réussite de la requête dans la console
@@ -58,7 +63,7 @@ const displayWeather = async (city) => {
         weatherBackgrounds[weatherMain] || "url('img/background-meteo.jpg')";
 
       // Mise à jour de la ville et du background-image
-      bodyItem.style.backgroundImage = backgroundImage;
+      cardTitle.style.backgroundImage = backgroundImage;
       cityItem.textContent = currentWeather.name;
 
       // Mise à jour de la température, de la description du temps et de l'icone
