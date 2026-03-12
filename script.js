@@ -12,12 +12,12 @@ const windItem = document.querySelector(".wind");
 const footerYear = document.querySelector(".footer__text__year");
 
 // API KEY
-const apiKey = "6529bbf8a404d9dc7494e5331f646f82";
+const apiKey = "6529bbf8a404d9dc7494e5331f646f82"; // ⚠️ A ne pas exposer publiquement normalement !
 
 // Variable permettant de stocker dans un tableau les données renvoyées par l'API Openweathermap
 let currentWeather = [];
 
-// déclaration de la fonction asynchrone displayWeather qui va permettre de récupérer et d'afficher les données de l'API
+// Déclaration de la fonction asynchrone displayWeather qui va permettre de récupérer et d'afficher les données de l'API
 const displayWeather = async (city) => {
   await fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=fr&appid=${apiKey}`
@@ -28,6 +28,8 @@ const displayWeather = async (city) => {
       }
     })
     .then(function (value) {
+      // Affichage d'un message de réussite de la requête dans la console
+      console.log("✅ Requête réussie");
       currentWeather = value;
       console.log(currentWeather);
 
@@ -59,7 +61,7 @@ const displayWeather = async (city) => {
       bodyItem.style.backgroundImage = backgroundImage;
       cityItem.textContent = currentWeather.name;
 
-      // Mise à jour de la température, description du temps et de l'icone
+      // Mise à jour de la température, de la description du temps et de l'icone
       cardWeather.innerHTML = `
         <div class="card__weather__content">
           <h2 class="display1">${temperature}°C</h2>
@@ -71,21 +73,24 @@ const displayWeather = async (city) => {
       `;
 
       // Mise à jour de l'humidité et du vent
-
-      humidityItem.textContent = `${humidity + "%"}`;
+      humidityItem.textContent = `${humidity}%`;
       windItem.textContent = `${wind}`;
     })
     .catch(function (err) {
       // Affichage d'un message d'erreur dans la console
-      console.error("Désolé, une erreur est survenue sur le serveur.");
+      console.error("❌ Erreur :", err);
     });
 };
 
 // Ecoute de l'événement "click" sur le bouton rechercher (icône de la loupe)
 buttonItem.addEventListener("click", (e) => {
   e.preventDefault();
-  // Appel de la fonction displayWeather ayant pour paramètre la nouvelle valeur de l'input
-  displayWeather(inputItem.value);
+  if (inputItem.value == "") {
+    alert("Veuillez saisir le nom d'une ville");
+  } else {
+    // Appel de la fonction displayWeather ayant pour paramètre la nouvelle valeur de l'input
+    displayWeather(inputItem.value);
+  }
 });
 
 // Appel de la fonction displayWeather ayant pour paramètre la ville de Araules pour avoir les données de cette ville dès l'arrivée sur la page
@@ -168,5 +173,5 @@ const displayDateAndTime = () => {
   footerYear.textContent = `${year}`;
 };
 
-// Appel de la fonction displayDateAndTime
+// Appel de la fonction displayDateAndTime()
 displayDateAndTime();
