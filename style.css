@@ -59,7 +59,7 @@ h1 {
     text-align: center;
     font-weight: var(--font-weight-bold);
     margin: 0;
-    color: var(--color-white);
+    color: var(--color-dark);
 }
 
 h2 {
@@ -99,8 +99,77 @@ body {
     background-position: center;
     font-size: var(--font-size-p);
     font-weight: var(--font-weight-regular);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
+
+
+/**** loader ****/
+
+.loader {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-white);
+    margin: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: display-loader 3s linear;
+    visibility: hidden;
+}
+
+@keyframes display-loader {
+    0% {
+        visibility: visible;
+        opacity: 0.7;
+    }
+
+    70% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--color-dark);
+    margin: 10px;
+    animation: bounce 0.5s ease-in-out infinite;
+}
+
+.circle:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.circle:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+/**** Animation bounce ****/
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 
 /**** header, footer ****/
 
@@ -136,6 +205,11 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.welcome {
+    text-align: center;
+    color: var(--color-white);
 }
 
 /**** formulaire ****/
@@ -194,6 +268,20 @@ button:hover {
     align-items: center;
     padding: 40px 20px;
     text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.card__title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 .card__title h2,
@@ -201,6 +289,7 @@ button:hover {
     position: relative;
     z-index: 2;
     margin-top: 8px;
+    color: var(--color-white);
     font-weight: var(--font-weight-bold);
 }
 
@@ -289,7 +378,7 @@ footer p {
     font-size: var(--font-size-h2);
     font-weight: var(--font-weight-bold);
     text-align: center;
-    color: var(--color-white);
+    color: var(--color-dark);
 }
 
 /**** Responsive design version mobile ****/
