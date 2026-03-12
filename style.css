@@ -275,6 +275,7 @@ button:focus {
     text-align: center;
     background-size: cover;
     background-position: center;
+    background-color: var(--color-dark);
 }
 
 .card__title::before {
