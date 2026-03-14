@@ -28,6 +28,7 @@ Lien vers le projet : https://aperbet56.github.io/meteo_zen/
 - Utilisation d'un normaliseur : le fichier normalize.css
 - Page web responsive
 - Desktop first
+- Préchargement de certaines images
 - Commentaires HTML
 - Commentaires CSS
 - JavaScript
