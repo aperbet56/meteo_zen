@@ -39,16 +39,16 @@ const displayWeather = async (city) => {
       console.log(currentWeather);
 
       // Récupération des données de la ville saisie par l'internaute
-      let temperature = Math.round(currentWeather.main.temp);
-      let wind = currentWeather.wind.speed;
-      let humidity = currentWeather.main.humidity;
-      let description = currentWeather.weather[0].description;
-      let icon = `https://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`;
-      let weatherMain = currentWeather.weather[0].main.toLowerCase();
+      const temperature = Math.round(currentWeather.main.temp);
+      const wind = currentWeather.wind.speed;
+      const humidity = currentWeather.main.humidity;
+      const description = currentWeather.weather[0].description;
+      const icon = `https://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`;
+      const weatherMain = currentWeather.weather[0].main.toLowerCase();
       // Ex: "clear", "clouds", "rain"
 
       // Choix du fond d'écran en fonction de la météo
-      let weatherBackgrounds = {
+      const weatherBackgrounds = {
         clear: "url('img/clear.webp')",
         clouds: "url('img/cloudy.webp')",
         rain: "url('img/rain.webp')",
